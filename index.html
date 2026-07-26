@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Krypton Client</title>
 
 <style>
@@ -14,24 +15,179 @@
 }
 
 body{
-    background:#0d1117;
+    background:#050505;
     color:white;
+    overflow-x:hidden;
 }
 
-header{
-    padding:80px 20px;
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00bfff;
+    filter:blur(180px);
+    opacity:0.25;
+    top:-100px;
+    left:50%;
+}
+
+nav{
+    padding:25px 8%;
+    background:#0b0b0b;
+}
+
+.logo{
+    color:#00bfff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+
+.hero{
     text-align:center;
+    padding:100px 20px;
 }
 
-h1{
+.hero h1{
     font-size:60px;
-    color:#00d4ff;
+    color:#00bfff;
+    text-shadow:0 0 20px #00bfff;
 }
 
-p{
-    color:#bcbcbc;
-    margin-top:15px;
+.hero p{
+    margin:20px;
+    font-size:20px;
+    color:#bbb;
 }
 
-.download{
-    margin
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 40px;
+    background:#00bfff;
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00bfff;
+}
+
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    padding:30px;
+    width:280px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+
+.card:hover{
+    border-color:#00bfff;
+    transform:translateY(-10px);
+}
+
+
+.card h2{
+    color:#00bfff;
+    margin-bottom:15px;
+}
+
+
+.card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Krypton Client</div>
+</nav>
+
+
+<section class="hero">
+
+<h1>KRYPTON CLIENT</h1>
+
+<p>
+Minecraft için hızlı, güçlü ve modern client.
+</p>
+
+<a class="btn" href="KryptonClient.jar" download>
+⬇ İndir
+</a>
+
+</section>
+
+
+
+<section class="cards">
+
+
+<div class="card">
+<h2>⚡ FPS Booster</h2>
+<p>
+Daha yüksek performans, daha akıcı oyun deneyimi ve FPS optimizasyonu.
+</p>
+</div>
+
+
+<div class="card">
+<h2>👁️ Visual</h2>
+<p>
+Storage ESP<br>
+Spawner ESP<br>
+Sus Chunk Finder
+</p>
+</div>
+
+
+<div class="card">
+<h2>⚔️ PVP</h2>
+<p>
+Crystal Aura<br>
+Anchor Macro<br>
+Auto Totem
+</p>
+</div>
+
+
+</section>
+
+
+
+<footer>
+© 2026 Krypton Client
+</footer>
+
+
+</body>
+</html>

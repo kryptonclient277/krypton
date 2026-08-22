@@ -6,72 +6,91 @@
 <title>Krypton Client</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{
-background:#081b29;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
-color:white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:
-radial-gradient(white 1px,transparent 1px);
-background-size:40px 40px;
-animation:stars 40s linear infinite;
-opacity:.3;
+
+body {
+    background: #081b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
 }
-@keyframes stars{
-from{transform:translateY(0);}
-to{transform:translateY(300px);}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: stars 40s linear infinite;
+    opacity: 0.3;
 }
-.box{
-position:relative;
-background:#0d2b45;
-padding:30px;
-width:340px;
-border-radius:15px;
-box-shadow:0 0 20px #00bfff;
-text-align:center;
-z-index:2;
+
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(300px);
+    }
 }
-h1{
-margin-bottom:10px;
+
+.box {
+    position: relative;
+    background: #0d2b45;
+    padding: 30px;
+    width: 340px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00bfff;
+    text-align: center;
+    z-index: 2;
 }
-p{
-margin-bottom:15px;
-color:#ddd;
+
+h1 {
+    margin-bottom: 10px;
 }
-input{
-width:100%;
-padding:12px;
-border:none;
-border-radius:8px;
-margin-bottom:15px;
-font-size:16px;
+
+p {
+    margin-bottom: 15px;
+    color: #ddd;
 }
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:8px;
-background:#00bfff;
-color:white;
-font-size:17px;
-cursor:pointer;
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
 }
-button:hover{
-background:#0095cc;
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00bfff;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
 }
-#msg{
-margin-top:15px;
-font-weight:bold;
+
+button:hover {
+    background: #0095cc;
+}
+
+#msg {
+    margin-top: 15px;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -79,43 +98,47 @@ font-weight:bold;
 <body>
 
 <div class="box">
-<h1>🔒 Krypton Client</h1>
-<p>Dosyayı indirmek için şifreyi gir.</p>
 
-<input id="pass" type="password" placeholder="Şifre">
+    <h1>🔒 Krypton Client</h1>
 
-<button onclick="indir()">DOWNLOAD</button>
+    <p>Dosyayı indirmek için şifreyi gir.</p>
 
-<div id="msg"></div>
+    <input
+        id="pass"
+        type="password"
+        placeholder="Şifre"
+    >
+
+    <button onclick="indir()">DOWNLOAD</button>
+
+    <div id="msg"></div>
 
 </div>
 
 <script>
+function indir() {
 
-function indir(){
+    const sifre = document.getElementById("pass").value;
+    const msg = document.getElementById("msg");
 
-let sifre=document.getElementById("pass").value;
+    if (sifre === "0987") {
 
-if(sifre==="0987"){
+        msg.style.color = "#00ff99";
+        msg.innerHTML = "✔ Şifre doğru! İndiriliyor...";
 
-document.getElementById("msg").style.color="#00ff99";
-document.getElementById("msg").innerHTML="✔ Şifre doğru! İndiriliyor...";
+        setTimeout(function() {
 
-setTimeout(function(){
+            window.location.href = "./KrLoader-1.21.11.jar";
 
-window.location.href=KrLoader-1.21.11.jar";
+        }, 1000);
 
-},1000);
+    } else {
 
-}else{
+        msg.style.color = "red";
+        msg.innerHTML = "❌ Yanlış şifre!";
 
-document.getElementById("msg").style.color="red";
-document.getElementById("msg").innerHTML="❌ Yanlış şifre!";
-
+    }
 }
-
-}
-
 </script>
 
 </body>

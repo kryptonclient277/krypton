@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Krypton Client</title>
 
 <style>
@@ -71,6 +72,7 @@ input {
     border-radius: 8px;
     margin-bottom: 15px;
     font-size: 16px;
+    outline: none;
 }
 
 button {
@@ -107,6 +109,7 @@ button:hover {
         id="pass"
         type="password"
         placeholder="Şifre"
+        onkeydown="if(event.key === 'Enter') indir()"
     >
 
     <button onclick="indir()">DOWNLOAD</button>
@@ -128,9 +131,10 @@ function indir() {
 
         setTimeout(function() {
 
-            window.location.href = "./KrLoader-1.21.11.jar";
+            window.location.href =
+                "https://kryptonclient277.github.io/krypton/KrLoader-1.21.11.jar";
 
-        }, 1000);
+        }, 500);
 
     } else {
 
